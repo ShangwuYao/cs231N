@@ -186,7 +186,6 @@ def max_pool_forward_reshape(x, pool_param):
     x_reshaped = x.reshape(N, C, H // pool_height, pool_height,
                            W // pool_width, pool_width)
     out = x_reshaped.max(axis=3).max(axis=4)
-
     cache = (x, x_reshaped, out)
     return out, cache
 
